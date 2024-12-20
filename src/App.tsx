@@ -10,6 +10,7 @@ function App() {
     ws.onmessage = (event) => {
       setMessages(m => [...m, event.data])
     }
+    //@ts-expect-error err
     wsRef.current = ws
 
     ws.onopen = () => {
@@ -38,11 +39,13 @@ function App() {
         )}
       </div>
       <div className="w-full bg-white flex">
+        {/* @ts-expect-error err */}
         <input ref={inputRef} className="flex-1 p-4" id="message"/>
         <button className="bg-purple-600 text-white p-4" onClick={() => {
           //@ts-expect-error msg
           const msg = inputRef.current?.value;
           // const msg = document.getElementById("message")?.value;
+          {/* @ts-expect-error err */}
           wsRef.current.send(JSON.stringify({
             type: "chat",
             payload: {

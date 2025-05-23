@@ -139,7 +139,15 @@ function ChatRoom() {
           </button>
         </div>
       </div>
+    
+        {/* Footer */}
+    <div className="mt-4 text-center text-sm text-gray-500">
+      Made with <span className="text-red-500">❤️</span> by{" "} 
+      <a href="https://github.com/RajatAgrawal24" target="_blank" rel="noopener noreferrer" className="text-purple-400 hover:underline">
+      Rajat
+      </a>
     </div>
+  </div>
     )
   )
 }
